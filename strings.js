@@ -4,4 +4,10 @@ function capitalize(string) {
   return String(firstLetter + rest);
 }
 
-export default capitalize;
+function reverseString(string) {
+  const array = [...string];
+  array.reverse();
+  return array.join("");
+}
+
+export {capitalize, reverseString};
