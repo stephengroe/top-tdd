@@ -1,4 +1,4 @@
-import caesarCipher from "./caesar-cipher";
+import caesarCipher from "../caesar-cipher";
 
 test('Message +1 shift', () => {
   expect(caesarCipher('defend the east wall of the castle', 1))

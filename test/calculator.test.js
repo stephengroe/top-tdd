@@ -1,4 +1,4 @@
-import calculator from './calculator';
+import calculator from '../calculator';
 
 // Addition
 test('Add single digits', () => {

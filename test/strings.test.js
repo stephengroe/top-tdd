@@ -1,4 +1,4 @@
-import {capitalize, reverseString} from './strings.js'
+import {capitalize, reverseString} from '../strings.js'
 
 // Test capitalize()
 test('Capitalize three-letter string',() => {
