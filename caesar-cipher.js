@@ -6,7 +6,7 @@ export default function caesarCipher(string, shift) {
   // For shifts beyond a full rotation, like 37 or -133
   if (Math.abs(shift) >= 26) shift = shift % 26;
 
-  array = array.map(letter => {
+  const cipherText = array.reduce((phrase, letter) => {
     if(justLetters.test(letter)) {
       let letterIndex = alphabet.indexOf(letter.toLowerCase());
       letterIndex += shift;
@@ -19,12 +19,13 @@ export default function caesarCipher(string, shift) {
       }
 
       // Make uppercase if necessary
-      if (letter === letter.toUpperCase()) return (alphabet[letterIndex]).toUpperCase();
-      return alphabet[letterIndex];
+      if (letter === letter.toUpperCase()) {
+        return phrase.concat((alphabet[letterIndex]).toUpperCase());
+      }
+      return phrase.concat(alphabet[letterIndex]);
     }
+    return phrase.concat(letter);
+  }, '');
 
-    return letter;
-  });
-
-  return array.join("");
+  return cipherText;
 }
